@@ -8,3 +8,18 @@ gitlab是开源社区最大的分布式版本控制系统git的CMS实现，基�
 - [Spcodes服务器](http://spcodes.rd.tp-link.net)
 
 ## 相关文档
+
+- [git核心概念](/#/gitlab/git-core)
+- [gitlab基础操作](/#/gitlab/basic)
+- [gitlab邮箱设置](/#/gitlab/gitlab-smtp)
+- [gitlab-ssh设置](/#/gitlab/gitlab-ssh)
+- [gitlab权限控制](/#/gitlab/gitlab-control)
+- [gitflow工作流](/#/gitlab/gitflow)
+
+
+
+
+
+
+
+
