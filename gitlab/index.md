@@ -9,12 +9,12 @@ gitlab是开源社区最大的分布式版本控制系统git的CMS实现，基�
 
 ## 相关文档
 
-- [git核心概念](/#/gitlab/git-core)
-- [gitlab基础操作](/#/gitlab/basic)
-- [gitlab邮箱设置](/#/gitlab/gitlab-smtp)
-- [gitlab-ssh设置](/#/gitlab/gitlab-ssh)
-- [gitlab权限控制](/#/gitlab/gitlab-control)
-- [gitflow工作流](/#/gitlab/gitflow)
+- [git核心概念](/doc/#/gitlab/git-core)
+- [gitlab基础操作](/doc/#/gitlab/basic)
+- [gitlab邮箱设置](/doc/#/gitlab/gitlab-smtp)
+- [gitlab-ssh设置](/doc/#/gitlab/gitlab-ssh)
+- [gitlab权限控制](/doc/#/gitlab/gitlab-control)
+- [gitflow工作流](/doc/#/gitlab/gitflow)
 
 
 
