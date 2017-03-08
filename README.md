@@ -13,10 +13,10 @@ __All rights reserved by IDP department.__
 
 ## 分类
 
-1. - [gitlab使用系列](/#/gitlab/index)
-2. - [docker使用系列](/#/docker/index)
-3. - [jenkins及持续集成](/#/jenkins/index)
-4. - [分享课程课件资料](/#/share/index)
+1. - [gitlab使用系列](/doc/#/gitlab/index)
+2. - [docker使用系列](/doc/#/docker/index)
+3. - [jenkins及持续集成](/doc/#/jenkins/index)
+4. - [分享课程课件资料](/doc/#/share/index)
 
 ## 投稿方式
 
