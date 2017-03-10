@@ -115,4 +115,5 @@ sudo systemctl restart docker.service
 sudo docker info
 ```
 
+## FAQ
 需要注意的是，docker的所有操作都需要在管理员权限下进行操作，切换到root用户是必须的。
