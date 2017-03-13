@@ -7,7 +7,9 @@ self.$config = {
     //docekr
     {title: 'Docker', path: '/docker/index'},
     //jenkins
-    {title: 'Jenkins', path: '/jenkins/index'}
+    {title: 'Jenkins', path: '/jenkins/index'},
+    //share 
+    {title:　'Share', path: '/share/index'}
   ],
   sidebar: true
 }
