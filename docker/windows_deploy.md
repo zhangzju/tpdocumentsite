@@ -73,6 +73,18 @@ sudo docker run --rm my-boot2docker-img > boot2docker.iso
 
 一般经过上面的步骤，即可解决网络问题。
 
+## 排除exit code -1073741819 问题
+
+docker toolbox依赖于virtualbox虚拟机，而virtualbox虚拟机在启动时有可能被第三方软件的动态链接库注入而产生这个错误。
+这些第三方软件一般包括：
+* 各类“安全卫士”软件
+* CCleaner以及类似软件
+* MacType或者Codec等系统优化软件
+
+解决此类问题的方法有两种：
+1. 在控制面板中卸载相关软件
+2. virtualbox 程序打开情况下，管理员权限打开MacType等的用户向导，打开左下角进程管理，在进程管理界面，选中所有virtualbox 相关的进程，选择不对这些进程启用，然后重启virtualbox 程序。
+
 
 ## 其他环境
 
