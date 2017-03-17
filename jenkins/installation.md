@@ -38,4 +38,13 @@ Jenkins主目录下包含了Jenkins服务器配置的细节，核心配置是存
 
 ## 使用docker部署jenkins
 
-## jenkins安装插件
+jenkins还提供了基于官方最新版本的docker image用于快速部署的环境。对于jenkins来说最为关键的部分是jenkins的主目录，我们在更换版本时也只需要关注这个目录，因此，我们在部署docker的时候，也不用考虑其他。
+
+在docker的版本迭代中，我们只需要保留 **jenkins_home** 在本地，然后每次运行jenkins的时候就将 **jenkins_home** 挂载到容器中成为数据卷，就可以方便二快捷的部署jenkins应用。
+
+使用docker不是jenkins还有一个要点，jenkins默认的8080端口会被很多程序占用，所以在映射端口的时候最好指定一个比较大的端口，或试着用-P参数来随机分配端口，避免因为端口冲突而导致的异常。具体的指令如下：
+
+```shell
+sudo docker run -d --name myjenkins -p 45678:8080 -v /var/jenkins_home:/var/jenkins_home jenkins
+```
+
