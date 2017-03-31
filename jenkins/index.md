@@ -9,4 +9,7 @@ Jenkins是一个有Java语言编写的储蓄集成工具。易于维护和使用
 
 ## 相关文档
 
-
+- [Jnekins的安装与部署](/doc/#/jenkins/installation)
+- [邮件通知设定](/doc/#/jenkins/configuration)
+- [部署docker环境](/doc/#/docker/windows_deploy)
+- [使用模板字符串匹配删除](/doc/#/docker/template_delete)
