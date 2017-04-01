@@ -14,7 +14,7 @@ Since many organizations new to git have no conventions how to work with it, it 
 
 ## Git flow 存在的问题
 
-![gitdashflow](../imgs/gitdashflow.png)
+![gitdashflow](imgs/gitdashflow.png)
 
 Git flow was one of the first proposals to use git branches and it has gotten a lot of attention. It advocates a master branch and a separate develop branch as well as supporting branches for features, releases and hotfixes. The development happens on the develop branch, moves to a release branch and is finally merged into the master branch. Git flow is a well defined standard but its complexity introduces two problems. The first problem is that developers must use the develop branch and not master, master is reserved for code that is released to production. It is a convention to call your default branch master and to mostly branch from and merge to this. Since most tools automatically make the master branch the default one and display that one by default it is annoying to have to switch to another one. The second problem of git flow is the complexity introduced by the hotfix and release branches. These branches can be a good idea for some organizations but are overkill for the vast majority of them. Nowadays most organizations practice continuous delivery which means that your default branch can be deployed. This means that hotfix and release branches can be prevented including all the ceremony they introduce. An example of this ceremony is the merging back of release branches. Though specialized tools do exist to solve this, they require documentation and add complexity. Frequently developers make a mistake and for example changes are only merged into master and not into the develop branch. The root cause of these errors is that git flow is too complex for most of the use cases. And doing releases doesn't automatically mean also doing hotfixes.
 
@@ -27,7 +27,7 @@ git flow是第一个采用分支来进行工作流管理的方案，也引起了
 
 ## GitHub flow :轻量级的一个选择
 
-![githubflow](../imgs/github_flow.png)
+![githubflow](imgs/github_flow.png)
 
 In reaction to git flow a simpler alternative was detailed, GitHub flow. This flow has only feature branches and a master branch. This is very simple and clean, many organizations have adopted it with great success. Atlassian recommends a similar strategy although they rebase feature branches. Merging everything into the master branch and deploying often means you minimize the amount of code in 'inventory' which is in line with the lean and continuous delivery best practices. But this flow still leaves a lot of questions unanswered regarding deployments, environments, releases and integrations with issues. With GitLab flow we offer additional guidance for these questions.
 
@@ -35,7 +35,7 @@ In reaction to git flow a simpler alternative was detailed, GitHub flow. This fl
 
 ## 配置Production分支的GitLab flow 
 
-![production_branch](../imgs/production_branch.png)
+![production_branch](imgs/production_branch.png)
 
 GitHub flow does assume you are able to deploy to production every time you merge a feature branch. This is possible for SaaS applications but are many cases where this is not possible. One would be a situation where you are not in control of the exact release moment, for example an iOS application that needs to pass App Store validation. Another example is when you have deployment windows (workdays from 10am to 4pm when the operations team is at full capacity) but you also merge code at other times. In these cases you can make a production branch that reflects the deployed code. You can deploy a new version by merging in master to the production branch. If you need to know what code is in production you can just checkout the production branch to see. The approximate time of deployment is easily visible as the merge commit in the version control system. This time is pretty accurate if you automatically deploy your production branch. If you need a more exact time you can have your deployment script create a tag on each deployment. This flow prevents the overhead of releasing, tagging and merging that is common to git flow.
 
@@ -43,7 +43,7 @@ github_flow基于一个前提：每一次你合并到master分支，就会立刻
 
 ## 配置Environment的 GitLab flow 
 
-![Environment_branche](../imgs/environment_branches.png)
+![Environment_branche](imgs/environment_branches.png)
 
 It might be a good idea to have an environment that is automatically updated to the master branch. Only in this case, the name of this environment might differ from the branch name. Suppose you have a staging environment, a pre-production environment and a production environment. In this case the master branch is deployed on staging. When someone wants to deploy to pre-production they create a merge request from the master branch to the pre-production branch. And going live with code happens by merging the pre-production branch into the production branch. This workflow where commits only flow downstream ensures that everything has been tested on all environments. If you need to cherry-pick a commit with a hotfix it is common to develop it on a feature branch and merge it into master with a merge request, do not delete the feature branch. If master is good to go (it should be if you are practicing continuous delivery) you then merge it to the other branches. If this is not possible because more manual testing is required you can send merge requests from the feature branch to the downstream branches. An 'extreme' version of environment branches are setting up an environment for each feature branch as done by Teatro.
 
