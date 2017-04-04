@@ -1,7 +1,5 @@
-## docker使用shipyard内建仓库
+## docker registry
 
-## docker pull
-
-## 加速器
+## shipyard
 
 ## docker https配置
