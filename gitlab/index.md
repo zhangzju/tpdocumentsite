@@ -16,6 +16,7 @@ gitlab是开源社区最大的分布式版本控制系统git的CMS实现，基�
 - [gitlab权限控制](/doc/#/gitlab/gitlab-control)
 - [gitflow工作流](/doc/#/gitlab/gitflow)
 - [从SVN迁移到git](/doc/#/gitlab/gitlab-svn)
+- [How to work with gitlab](/doc/#/gitlab/double)
 
 
 
