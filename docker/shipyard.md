@@ -29,4 +29,22 @@ Docker Registry 公开服务是开放给用户使用、允许用户管理镜像�
 
 ## shipyard
 
-## docker https配置
+shipyard是一个开源的基于web界面，用于管理docker镜像和docker集群的工具。相比于Kubernates，它具有以下的特性： 
+
+1. 支持多节点的集成管理
+2. 可动态加载节点
+3. 可托管node下的容器
+
+shipyard本身是由docker构建的，直接使用docker pull即可从相应的registry获取到shipyard：
+
+```shell
+
+curl -s https://shipyard-project.com/deploy | bash -s
+
+```
+shipyard给予rethinkdb和docker swarm构建不同docker之间的集群，从而对docker进行具有动态的管理。
+
+![shipyard运行界面](imgs/docker/shipyard.png)
+
+
+
