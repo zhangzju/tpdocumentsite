@@ -6,7 +6,7 @@ Jenkins需要有一个能够发送邮件的账户，最好是系统管理员的e
 
 Jenkins本身就带有Email的功能，打开“系统设置”即可找到，配置具体情况如下：
 
-![jenkins-email](../imgs/jenkins-email.JPG)
+![jenkins-email](imgs/jenkins-email.JPG)
 
 * SMTP服务器填写需要有完整的域名，如果是本机的邮件服务器，则可以填写Localhost
 * 默认的后缀缺省是SMTP服务器的域，如果是本地的邮件服务器的话，则需要填写完整的后缀

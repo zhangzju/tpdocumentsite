@@ -24,8 +24,11 @@ docker pull [选项] [Docker Registry地址]<仓库名>:<标签>
 * 执行完毕后容器被终止
 
 是最常见的docker命令，格式为：
+
 ```shell
+
 docker run [OPTIONS] IMAGE[:TAG] [COMMAND] [ARG...]
+
 ```
 简单的介绍一下常用的参数：
 1. -a STDIN: 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项；
@@ -35,13 +38,19 @@ docker run [OPTIONS] IMAGE[:TAG] [COMMAND] [ARG...]
 5. -d=true或者-d: 容器将会运行在后台模式,此时所有I/O数据只能通过网络资源或者共享卷组来进行交互,因为容器不再监听你执行docker run的这个终端命令行窗口;
 6. -p或者-P:那么容器会开放部分端口到主机，只要对方可以连接到主机，就可以连接到容器内部。当使用-P时，Docker会在主机中随机从49153 和65535之间查找一个未被占用的端口绑定到容器。你可以使用docker port来查找这个随机绑定端口;
 7. -v=[]: 创建一个数据卷并挂载到运行的container上，格式是: 
+
 ```shell
+
 [host-dir]:[container-dir]:[rw|ro].
+
 ```
 
 关于我们的使用，一般会是如下的一条命令：
+
 ```shell
+
 docker run -it -v /home/bba:/opt/bba --name="vr500" ericchu/vr500
+
 ```
 ## docker  ps
 
@@ -52,8 +61,11 @@ docker run -it -v /home/bba:/opt/bba --name="vr500" ericchu/vr500
 
 ## docker start && docker stop
 可以利用 docker start 命令，直接将一个已经终止的容器启动运行。
+
 ```shell
+
 docker start [OPTIONS] CONTAINER [CONTAINER...]
+
 ```
 这里的CONTAINER可以使用三种方式来选择：
 1. 完成的Container ID
@@ -63,6 +75,8 @@ docker start [OPTIONS] CONTAINER [CONTAINER...]
 有时候，我们会将一个容器放在后台运行，以便于多次重复进入使用，这时，如果我们需要使用这个容器的某个端口的时候，就需要关闭这个容器，这时候就应该使用docker stop指令：
 
 ```shell
+
 docker stop CONTAINER
+
 ```
 用法类似于start.
