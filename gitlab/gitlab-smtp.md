@@ -42,6 +42,7 @@ gitlab_rails['gitlab_email_reply_to'] = 'noreply@example.com'
 
 gitlab作为一个rails应用，也提供了运行bundle任务的接口，
 首先，使用gitlab-rails进入控制台窗口：
+
 ```shell
  gitlab-rails console
 ```
