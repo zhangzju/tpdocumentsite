@@ -51,6 +51,17 @@ svn log "$SVNURL" -q | awk -F '|' '/^r/ {sub("^ ", "", $2); sub(" $", "", $2); p
 ```
 ![get svn info](imgs/git/double06.png)
 
+* 將項目從 SVN 轉換為 GIT 至本地端
+
+```shell
+
+git svn clone "$SVNURL" --no-metadata --preserve-empty-dirs -A ./authors-transform.txt --no-minimize-url ./temp
+
+```
+![get svn info](imgs/git/double39.png)
+![get svn info](imgs/git/double40.png)
+
+
 *  將 remote git repository 加入控管
 
 ```shell

@@ -16,8 +16,46 @@ gitlab是开源社区最大的分布式版本控制系统git的CMS实现，基�
 - [gitlab权限控制](/doc/#/gitlab/gitlab-control)
 - [gitflow工作流](/doc/#/gitlab/gitflow)
 - [从SVN迁移到git](/doc/#/gitlab/gitlab-svn)
-- [How to work with gitlab](/doc/#/gitlab/double)
+- [How to work with gitlab](/doc/#/gitlab/SPBU_SOP_How_to_work_with_gitlab)
 
+## Q&A
+
+### push.default设置
+
+Ｑ：在直接使用git push进行代码提交时，出现以下问题提交被拒绝，远程分支却并不是protected分支？(王洋)
+
+push.default是设定默认的push规格的全局参数，如果git push命令没有明确指定引用规格(refspec),也就是没有指定推送的源分支和目标分支，那么git会采用push.default定义的动作。不同的值适用于不同的工作流程模式：
+
+1. nothing:不推送任何东西并有错误提示，除非明确指定分支引用规格。强制使用分支引用规格来避免可能潜在的错误
+
+2. current:推送当前分支到接收端名字相同的分支。
+
+3. upstream:推送当前分支到上游@{upstream}。这个模式只适用于推送到与拉取数据相同的仓库，比如中央工作仓库流
+程模式。
+
+4. simple:在中央仓库工作流程模式下，拒绝推送到上游与本地分支名字不同的分支。也就是只有本地分支名和上游分支名字一致才可以推送，就算是推送到不是拉取数据的远程仓库，只要名字相同也是可以的。在GIT 2.0中，simple将会是push.default的默认值。simple只会推送本地当前分支。
+
+5. matching:推送本地仓库和远程仓库所有名字相同的分支。这是git当前版本的缺省值。
+
+一般将这个配置改为current即可。
+
+```shell
+
+git config --global push.default current
+
+```
+
+### core.filemode设置
+
+Ｑ：在clone代码后未作更改，但是修改了文件权限，导致所有的文件都被git status识别为已经修改？（冼健涛）
+
+这是因为高版本的git会默认观察文件的模式的变更，需要通过全局设置将这种观察关闭。
+
+```shell
+
+git config --global core.filemode false
+
+```
 
 
 
