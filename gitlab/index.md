@@ -57,6 +57,19 @@ git config --global core.filemode false
 
 ```
 
+### git gc清理缓存文件
+
+Ｑ：在进行一个内容较多的repo的fetch或者clone操作时，会出现“Auto packing the repository for optimum performance. You may also　run "git gc" manually. See "git help gc" for more information.”类似的错误如何处理？
+
+Git 往磁盘保存对象时默认使用的格式叫松散对象 (loose object) 格式。Git 时不时地将这些对象打包至一个叫 packfile 的二进制文件以节省空间并提高效率。当仓库中有太多的松散对象则就会提示你运行 ' git gc '。
+
+由于虚拟机性能等原因，出现这样的情况的时候，需要运行：
+
+```shell
+
+git gc
+
+```
 
 
 
