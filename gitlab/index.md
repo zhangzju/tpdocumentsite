@@ -71,6 +71,23 @@ git gc
 
 ```
 
+### https方式的push或者clone出现fatal错误
+
+Ｑ：当使用https的方式进行与服务器的代码传输与提交操作时，由于git的默认ssl规则会出现
+
+```shell
+server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
+
+```
+的问题，通常有两种处理办法，但是处于减少环境干扰的方式考虑，可以设定git的默认传输规则，忽略ssl的认证，在内网的操作中可以这么做，但是如果涉及到外网，这样做会有风险。
+
+```shell
+
+git config --global http.sslVerify false
+
+```
+
+
 
 
 
