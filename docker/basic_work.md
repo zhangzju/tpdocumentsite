@@ -1,7 +1,9 @@
 # 常用指令
 
 __注意：所有的docker指令均需要在root用户状态下才能正常运行__
-## docker pull
+## 获取docker　image
+
+### 从镜像仓库获取docker image
 
 从 Docker Registry 获取镜像的命令是 docker pull。其命令格式为：
 ```shell
@@ -10,7 +12,49 @@ docker pull [选项] [Docker Registry地址]<仓库名>:<标签>
 * Docker Registry地址：地址的格式一般是 <域名/IP>[:端口号]。默认地址是 Docker Hub。
 * 仓库名：仓库名是两段式名称，即 <用户名>/<软件名>。对于 Docker Hub，如果不给出用户名，则默认为 library，也就是官方镜像。
 
-## docker run
+### 通过导入tar包获取
+
+在我们的工作中，主要的方式还是通过倒入已经配置好的完整的docker image的镜像包进行镜像的导入。
+
+例如，现在我们有一个名为ubuntu14.04_V3.2.tar 的镜像包，那么需要通过下面的指令进行导入：
+
+```shell
+
+docker load --input ubuntu14.04_V3.2.tar 
+
+```
+
+有的时候，这个命令会出现无法识别的情况，因为不同的系统中存在这文件名数据库的缓存的识别方式的差异，那么可以切换到以下命令：
+
+```shell
+
+docker load < ubuntu14.04_V3.2.tar 
+
+```
+
+一般以上两个命令总有一个是可用的。
+
+### 通过传递容器快照来获取
+
+当我们创建一个docker image的时候，往往是因为这个image在之后的过程中会被反复多次利用，所以进行save的操作，减少重复的工作，但是，很多场景中，我们可能只需要当前的这个容器只会被其他同事使用一两次，这样的情况下，再制作一个镜像是非常不经济的，这时候我们就可以通过传递容器快照的方式来获取容器，传递中的容器也是被打包成为tar格式，例如，现在有名为ubuntu_container.tar的快照，那么可以通过以下命令来声场一个运行中的容器：
+
+```shell
+
+cat ubuntu_container.tar | docker import - ubuntu_container
+
+```
+
+当有需要传递一个容器的快照的时候，则需要如下命令即可：
+
+```shell
+
+docker export <HASH> >  ubuntu_container.tar
+
+```
+
+## 运行docker
+
+### docker run　运行一个全新的docker
 
 创建一个新的容器并运行一个命令，
 当利用 docker run 来创建容器时，Docker 在后台运行的标准操作包括：
@@ -52,31 +96,47 @@ docker run [OPTIONS] IMAGE[:TAG] [COMMAND] [ARG...]
 docker run -it -v /home/bba:/opt/bba --name="vr500" ericchu/vr500
 
 ```
-## docker  ps
+
+### docker start 运行一个被exited的docker
+
+在任意一个运行中的docker容器中，我们只需要在命令行中输入
+
+```shell
+
+exit
+
+```
+
+即可退出当前的容器。
+
+当我们退出容器后，容器并没有被删除，而是处于停止运行的状态，此时，需要再次使用之前的docker的话，就需要如下命令：
+
+```shell
+
+docker start <HASH>
+
+```
+其中的HASH也可以替换为docker容器的名称和标签的组合。
+
+
+## docker管理
+
+### docker  ps 查看目前存在的容器
 
 使用docker ps可以查看到目前的容器运行状况，常用的参数有：
 * -a：包含所有container，无论是否中止
 
-对于docker ps来说，最大的作用是查看docker container 的ID，以便进行下一步操作。
+### docker attach进入运行中的容器的命令行
 
-## docker start && docker stop
-可以利用 docker start 命令，直接将一个已经终止的容器启动运行。
-
-```shell
-
-docker start [OPTIONS] CONTAINER [CONTAINER...]
-
-```
-这里的CONTAINER可以使用三种方式来选择：
-1. 完成的Container ID
-2. uuid，及前面一部分ID，足够区分即可
-3. name， 即在一开始docker run的时候制定的name
-
-有时候，我们会将一个容器放在后台运行，以便于多次重复进入使用，这时，如果我们需要使用这个容器的某个端口的时候，就需要关闭这个容器，这时候就应该使用docker stop指令：
+有时候我们需要在docker容器运行在后台，例如大多数服务都是不需要进入命令行的，但是有时候我们需要对这些运行在后台的docker进行一些操作的时候，就需要将他们连接到命令行，如下：
 
 ```shell
 
-docker stop CONTAINER
+docker attach <HASH>
 
 ```
-用法类似于start.
+
+如何退出docker attach但是又能够使docker容器继续运行呢？需要使用docker的一个黑科技，快捷键　*CTRL+P CTRL+Q*　可以非常快捷同时不影响运行地退出当前被连接的容器。
+
+需要注意的是，这个命令能够一次性连接多个容器，但是对于命令行来说，他们是同一个进程，所以任何一个容器的阻塞将会导致所有被连接的容器的命令行不可用。
+

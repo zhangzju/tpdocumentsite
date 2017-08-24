@@ -8,7 +8,7 @@ docker是一种轻量级的新型的容器技术，在快速部署，环境迁�
 ## 相关文档
 
 - [docker基本概念](/doc/#/docker/basic_concept)
-- [部署docker环境](/doc/#/docker/windows_deploy)
+- [docker环境的部署](/doc/#/docker/windows_deploy)
 - [docker基本使用](/doc/#/docker/basic_work)
-- [docker与shipyard](/doc/#/docker/shipyard)
-- [使用模板字符串匹配删除](/doc/#/docker/template_delete)
+- [shipyard管理docker节点](/doc/#/docker/shipyard)
+- [docker中残余的清理](/doc/#/docker/template_delete)
