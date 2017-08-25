@@ -9,14 +9,30 @@ gitlab是开源社区最大的分布式版本控制系统git的CMS实现，基�
 
 ## 相关文档
 
+### 针对开发人员的git基本文档
+
 - [git核心概念](/doc/#/gitlab/git-core)
 - [gitlab基础操作](/doc/#/gitlab/basic)
-- [gitlab邮箱设置](/doc/#/gitlab/gitlab-smtp)
 - [gitlab-ssh设置](/doc/#/gitlab/gitlab-ssh)
-- [gitlab权限控制](/doc/#/gitlab/gitlab-control)
-- [gitflow工作流](/doc/#/gitlab/gitflow)
+- [常见git图形界面工具使用](/doc/#/gitlab/git_gui_software) *
+
+### 针对项目负责人的git迁移相关
+
 - [从SVN迁移到git](/doc/#/gitlab/gitlab-svn)
 - [How to work with gitlab](/doc/#/gitlab/SPBU_SOP_How_to_work_with_gitlab)
+- [使用docker进行快速迁移](/doc/#/gitlab/docker_git_svn) *
+
+### 针对运维人员的gitlab相关
+
+- [gitlab邮箱设置](/doc/#/gitlab/gitlab-smtp)
+- [gitlab权限控制](/doc/#/gitlab/gitlab-control)
+- [gitlab关键数据的备份](/doc/#/gitlab/gitlab_backup) *
+
+### 针对管理人员的gitlab操作指南
+
+- [gitflow工作流](/doc/#/gitlab/gitflow)
+- [针对基准项目开发新的功能](/doc/#/gitlab/new_feature) *
+- [针对定制单开发新的分支](/doc/#/gitlab/new_specific) *
 
 ## Q&A
 

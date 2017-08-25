@@ -1,10 +1,6 @@
 ## 技术成长资料共享
 
-分享软件开发过程中的心得体会与资料,展示研发同事的出色文笔与深厚内功
-
-### 提交方式
-
-请各位有经验可以分享的同时，将相关的资料撰写为markdown格式的文档（语法非常简单，详见下文语法指南），然后上传到我们专用的git仓库（如何使用git仓库呢？请在本站相关模块查找）
+仰慕大牛来分享，笑迎小白做交流
 
 ### 仓库
 
@@ -15,9 +11,6 @@ https://spcodes.rd.tp-link.net/Public/FileServer.git
 
 git@spcodes.rd.tp-link.net:Public/FileServer.git
 ```
-### 编辑器
-
-各种操作系统之下都有许多免费开源的markdown编辑器，根据笔者使用的经验，推荐VScode编辑器。
 
 ## 相关导航
 
@@ -25,7 +18,14 @@ git@spcodes.rd.tp-link.net:Public/FileServer.git
 
 ## 文档列表
 
-## markdown语法指南
+### 大牛专栏
+
+- [赵梦青:深入浅出无线协议](/doc/#/share/zhaomengqing) *
+- [叶睿:Dongle从入门到精通](/doc/#/share/yerui) *
+
+### 小白体悟
+
+## markdown语法详细指南
 
 ### 概述
 

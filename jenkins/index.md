@@ -15,17 +15,27 @@ Jenkins是一个有Java语言编写的持续集成工具。易于维护和使用
 
 ## 持续集成相关文档
 
-### 持续集成化的过程
+### 针对管理人员的Jenkins操作指南
 
-- [Jnekins的安装与部署](/doc/#/jenkins/installation)
-- [邮件通知设定](/doc/#/jenkins/configuration)
-- [部署docker环境](/doc/#/docker/windows_deploy)
-- [使用模板字符串匹配删除](/doc/#/docker/template_delete)
-
+- [pipeline基础语法](/doc/#/jenkins/pipeline) *
+- [email-ext以及其他插件的使用](/doc/#/jenkins/use_plugins) *
+- [daily build的设置以及中间产物的输出](/doc/#/jenkins_daily_build) *
 
 ### 持续集成化的项目
 
 - [RE200(SP)v2](/doc/#/jenkins/re200spv2)
 - [GR1600v](/doc/#/jenkins/gr1600v)
-- [VR1200](/doc/#/jenkins/vr1200)
+- [VR1200](/doc/#/jenkins/vr1200) *
+- [C20(SP)v1](doc/#/jenkins/c20) *
+
+### 针对运维人员的Ｊenkins操作指南
+
+- [Jnekins的安装与部署](/doc/#/jenkins/installation)
+- [邮件通知设定](/doc/#/jenkins/configuration)
+- [使用thinBackup进行备份](/doc/#/jenkins/thinbackup) *
+- [插件安装以及性能监控](/doc/#/jenkins/plugin_install) *
+
+## Q&A
+
+
 
