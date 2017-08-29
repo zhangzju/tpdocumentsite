@@ -12,8 +12,9 @@ gitlab是开源社区最大的分布式版本控制系统git的CMS实现，基�
 ### 针对开发人员的git基本文档
 
 - [git核心概念](/doc/#/gitlab/git-core)
-- [gitlab基础操作](/doc/#/gitlab/basic)
+- [git初次运行前的配置](/doc/#/gitlab/basic)
 - [gitlab-ssh设置](/doc/#/gitlab/gitlab-ssh)
+- [开发人员在workflow工作流中的最佳实践](/doc/#/gitlab/gitlab_developer_workflow)
 - [git diff使用详解](/doc/#/gitlab/git_diff) *
 - [git branch及命令行中的分支管理](/doc/#/gitlab/git_branch_textmode) *
 - [时光机--git reset与git revert的使用](/doc/#/gitlab/git_reset_revert) *
