@@ -27,6 +27,7 @@
 ###  <http://spdocker.rd.tp-link.net>
 * docker镜像托管服务器
 * lets chat即时通讯试点　*
+* mediawiki部门维基百科　*
 
 ## Mardown极速入门 
 
