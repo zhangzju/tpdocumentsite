@@ -22,6 +22,7 @@ docker是一种轻量级的新型的容器技术，在快速部署，环境迁�
 ### docker技巧与进阶
 - [shipyard管理docker节点](/doc/#/docker/shipyard)
 - [docker中残余的清理](/doc/#/docker/template_delete)
+- [docker网络配置](/doc/#/docker/docker_network) *
 - [docker三剑客swarm,compose,machine](/doc/#/docker/docker_swarm) *
 
 ## Q&A
