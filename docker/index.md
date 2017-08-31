@@ -11,6 +11,7 @@ docker是一种轻量级的新型的容器技术，在快速部署，环境迁�
 - [docker基本概念](/doc/#/docker/basic_concept)
 - [docker环境的部署](/doc/#/docker/windows_deploy)
 - [docker基本使用](/doc/#/docker/basic_work)
+- [使用数据卷容器解决数据格式问题](/doc/#/docker_volume)
 
 ### 针对项目负责人的docker维护文档
 
