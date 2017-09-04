@@ -26,7 +26,7 @@ Jenkins是一个有Java语言编写的持续集成工具。易于维护和使用
 - [RE200(SP)v2](/doc/#/jenkins/re200spv2)
 - [GR1600v](/doc/#/jenkins/gr1600v)
 - [VR1200](/doc/#/jenkins/vr1200) 
-- [C20(SP)v1](doc/#/jenkins/c20) *
+- [C20(SP)v1](doc/#/jenkins/c20) 
 
 ### 针对运维人员的Ｊenkins操作指南
 
