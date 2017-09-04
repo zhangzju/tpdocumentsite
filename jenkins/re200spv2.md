@@ -1,8 +1,16 @@
 ## 基本信息
 
-### Maintainer: 彭炯 SW2
-### CI 地址：http://spjenkins.rd.tp-link.net:8080/job/RE200(SP)v2_buildimage
-### Document support: 张伟　SW1
+### Maintainer
+
+<strong>[彭炯 SW2](https://spcodes.rd.tp-link.net/pengjiong)</strong>
+
+### CI 地址
+
+<http://spjenkins.rd.tp-link.net:8080/job/RE200(SP)v2_buildimage>
+
+### Document support
+
+<strong>[张伟　SW1](https://spcodes.rd.tp-link.net/zhangwei_w8284)</strong>
 
 ## RE200(SP)v2代码编译步骤
 
