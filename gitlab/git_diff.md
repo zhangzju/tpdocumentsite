@@ -1,4 +1,83 @@
 ## git diff概述
 
-Show changes between the working tree and the index or a tree, changes between the index and a tree, changes between two trees, changes between two blob objects, or changes between two files on disk.
-git diff命令用于显示git中工作区，暂存区，仓库中不同文件或者相互之间的差异。 
+git diff命令用于显示git中工作区，暂存区，仓库中不同文件或者相互之间的差异。
+
+**尽管有很多diff工具以及gitlab本身提供了许多方便的web界面来查看不同代码之间的差异，但是git diff依然能看到在哪些地方看不到的信息。**
+
+下文所有的命令，都可以在下图中找到一个清晰的展现：
+
+![git diff](imgs/diff.svg.png)
+
+## 本地操作的diff
+
+### 未暂存的文件与暂存区
+
+查看未暂存的文件，也就是说查看那些不是被我们自己主动修改但是因为编译等原因更改的文件，使用以下命令：
+
+```shell
+git diff
+```
+
+所以大家务必要注意，赞自己修改了文件之后，一定要进行暂存！！
+
+### 暂存区与本地仓库
+
+已经暂存的文件，也就是我们已经修改并且使用git add命令进行修改的文件，通常这些文件是我们需要修改的文件，在提交之前需要确认这些文件中不包含多余的文件，也没有遗漏。
+
+使用以下命令可以查看暂存的文件中的修改：
+
+```shell
+git diff --cached
+```
+
+### 未暂存的文件与与本地仓库
+
+这个命令相当于前两个命令组合使用，需要使用到HEAD指针，具体命令如下：
+
+```shell
+git diff <HEAD>
+```
+
+## 仓库版本间的diff
+
+### 不同历史版本之间
+
+不同的commit版本之间的diff，需要使用git log找到他们的HASH，使用HASH来标记每一次的commit，在确定好了需要diff的两个版本之后，使用以下命令：
+
+```shell
+git diff <commit1> <commit2>
+```
+
+### 与上一次提交之间
+
+在前面的文档中提到过，git使用 HEAD 指针来指代当前的本地仓库中当前分支的最新版本，使用 HEAD^ 来指代 HEAD 的前一次提交，所以可以使用一下命令来进行当前版本与上一个版本之间的diff：
+
+```shell
+git diff HEAD HEAD^
+```
+
+## 分支之间的diff
+
+**注意：当你要使用远程分支与本地分支之间的diff的时候，请先查看远程分支的正确名称，区分远程分支和本地分支**
+
+### 两个分支当前版本的diff
+
+默认对比两个分支的差异的时候，应该明白此时对比的是两个分支HEAD指针所指向的版本之间的差异，使用如下命令即可：
+
+```shell
+git diff <branch1> <branch2>
+```
+### 某个Feature分支与develop分支对比的更改
+
+上面的命令对比的是；两个分支的HEAD指针所指向的分支的差异，但是，由于分布式的原因，这也会带来一定的问题，例如：
+
+* A从develop上开发a分支，B从develop上开了b分支
+* A率先完成，a分支被合并到develop，此时develop的版本发生了变化，HEAD指针被改写。
+* B使用diff来进行比对，发现A的修改也会出现在diff的差异中
+
+上面这个问题在我们日常的开发中会出现，因此，如何对比一个派生的分支从develop分支上派生之后的更改，对于保证工作的纯净又问重要，这时，我们是用以下命令：
+
+```shell
+ git diff <branch1>...<branch2>
+```
+注意，三个点号需要连续，不能出现空格。
