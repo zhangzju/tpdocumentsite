@@ -6,7 +6,7 @@ git diff命令用于显示git中工作区，暂存区，仓库中不同文件或
 
 下文所有的命令，都可以在下图中找到一个清晰的展现：
 
-![git diff](imgs/diff.svg.png)
+![git diff](imgs/git_diff/diff.svg.png)
 
 ## 本地操作的diff
 

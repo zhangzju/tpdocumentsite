@@ -27,3 +27,15 @@ docker是一种轻量级的新型的容器技术，在快速部署，环境迁�
 - [docker三剑客swarm,compose,machine](/doc/#/docker/docker_swarm) *
 
 ## Q&A
+
+### client与server版本不一致
+
+Q: Error response from daemon: client is newer than server (client API version: 1.24, server API version: 1.22)
+
+Ａ：这个问题通常是在更新了系统的软件之后产生的，由于docker的daemon进程并没有更新，因此会出现版本差异无法通信的问题，此时需要执行：
+
+```shell
+
+sudo systemctl restart docker
+```
+

@@ -19,7 +19,7 @@ gitlab是开源社区最大的分布式版本控制系统git的CMS实现，基�
 - [常见git图形界面工具使用](/doc/#/gitlab/git_gui_software) 
 
 ### git进阶技巧
-- [git diff使用详解](/doc/#/gitlab/git_diff) *
+- [git diff使用详解](/doc/#/gitlab/git_diff) 
 - [git branch及命令行中的分支管理](/doc/#/gitlab/git_branch_textmode) *
 - [时光机--git reset与git revert的使用](/doc/#/gitlab/git_reset_revert) *
 
@@ -28,7 +28,7 @@ gitlab是开源社区最大的分布式版本控制系统git的CMS实现，基�
 
 - [从SVN迁移到git](/doc/#/gitlab/gitlab-svn)
 - [How to work with gitlab](/doc/#/gitlab/SPBU_SOP_How_to_work_with_gitlab)
-- [使用docker进行快速迁移](/doc/#/gitlab/docker_git_svn) *
+- [使用docker进行快速迁移](/doc/#/gitlab/docker_git_svn) 
 
 ### 针对运维人员的gitlab相关
 
@@ -39,8 +39,7 @@ gitlab是开源社区最大的分布式版本控制系统git的CMS实现，基�
 ### 针对管理人员的gitlab操作指南
 
 - [gitflow工作流](/doc/#/gitlab/gitflow)
-- [针对基准项目开发新的功能](/doc/#/gitlab/new_feature) *
-- [针对定制单开发新的分支](/doc/#/gitlab/new_specific) *
+- [项目管理人员操作流程](/doc/#/gitlab/new_feature) *
 
 ## Q&A
 
