@@ -19,7 +19,8 @@ Jenkins是一个有Java语言编写的持续集成工具。易于维护和使用
 
 - [pipeline基础语法](/doc/#/jenkins/pipeline) *
 - [email-ext以及其他插件的使用](/doc/#/jenkins/use_plugins) *
-- [daily build的设置以及中间产物的输出](/doc/#/jenkins_daily_build) *
+- [daily build的设置以及中间产物的输出](/doc/#/jenkins/jenkins_daily_build) *
+- [webhook的使用以及触发式自动构建](/doc/#/jenkins/webhook_gitlab) *
 
 ### 持续集成化的项目
 
