@@ -21,7 +21,7 @@ gitlab是开源社区最大的分布式版本控制系统git的CMS实现，基�
 ### git进阶技巧
 - [git diff使用详解](/doc/#/gitlab/git_diff) 
 - [gitlab设置ssh实现免密交互](/doc/#/gitlab/gitlab-ssh)
-- [git branch及命令行中的分支管理](/doc/#/gitlab/git_branch_textmode) *
+- [git branch及命令行中的分支管理](/doc/#/gitlab/git_branch_textmode) 
 - [时光机--git reset与git revert的使用](/doc/#/gitlab/git_reset_revert) *
 
 

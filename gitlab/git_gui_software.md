@@ -4,11 +4,72 @@
 
 目前在社区中git图形界面工具的种类非常众多，这里简介四种不同类型的工具，大家可以根据需要选择使用。
 
+2017.09.14更新：经过一段时间的推广，git图形界面扩展工具sourcetree得到大家的认可，特此加入推荐套餐。另外特别推荐命令行git增强工具Oh My ZSH，命令行用户不可错过的神器。
+
 **注意：本文提到的共享路径为**
 ```shell
 \\exfile.tp-link.net\运营商事业部\运营商研发部\Software\Common\4-开发软件\持续集成\git
 ```
+## SourceTree
 
+### 安装以及破解
+
+这个软件的安装包已经放置在前文提到的共享路径之中。
+
+这个软件第一次安装的时候需要登入atlassian账户进行验证，由于内网无法登陆，所以我们也想到了应对的策略，伪造了数据。在共享路径中，有一个名为account.json的文件，大家遵循以下步骤操作：
+
+* 点击安装包安装，出现需要输入账户的时候退出安装
+* 将account.json文件复制，放到自己用户文件夹的AppData\Local\Atlassian\SourceTree路径下，注意，这个文件夹默认是隐藏的，大家需要先使其可见
+* 重新点击安装包，这时出现点选Ｍercurial的界面，直接选择不使用，即可进入主界面
+
+### 功能特性
+
+这款软件速度较快，第一次夹在samba服务器上的文件会有点慢，需要耐心等待，但是之后的每一次查看都会非常迅速。
+
+使用界面如下图：
+
+![sourcetree](imgs/git_gui_tools/st.png)
+
+## Oh My ZSH
+
+### 安装
+
+Oh-My-Zsh 是 Zsh　的扩展.　通过对zsh的丰富定制，让经常使用git和命令行的开发人员事半功倍。
+
+安装Oh-My-Zsh，首先你需要安装Zsh，直接采用apt进行安装即可：
+
+```shell
+sudo apt install zsh -y
+```
+然后能够使用研发处外网权限白名单的同事们可以通过下面的脚本来安装：
+
+```shell
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+如果没有外网权限，只需要让安装好的同事们把用户主目录下的.zshrc复制给你即可。
+
+
+### 主要配置
+
+Oh-My-Zsh有着丰富的主题，运行的界面如下图：
+![af-magit](imgs/git_gui_tools/af-magic.jpg)
+
+还有如下比较出色的主题：
+
+![af-magit](imgs/git_gui_tools/eastwood.jpg)
+![af-magit](imgs/git_gui_tools/nebirhos.jpg)
+
+然而，外观并不是Oh-My-Zsh能够脱颖而出的最重要的原因，Oh-My-Zsh内置了几乎所有你能用到的git命令的简写，例如我们常用的命令：
+
+```shell
+git diff --cached
+```
+在这里只需要：
+
+```shell
+gdca
+```
+更多的详情要参考官方的文档。
 
 ## Tortoise Git 
 
