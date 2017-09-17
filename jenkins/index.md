@@ -35,7 +35,7 @@ Jenkins是一个有Java语言编写的持续集成工具。易于维护和使用
 - [邮件通知设定](/doc/#/jenkins/configuration)
 - [使用thinBackup进行备份](/doc/#/jenkins/thinbackup) *
 - [插件安装以及性能监控](/doc/#/jenkins/plugin_install) *
-
+- [常见服务器运维问题](/doc/#/jenkins/server.md)
 ## Q&A
 
 ### git-svn迁移及jenkins部署问题
