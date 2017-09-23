@@ -22,7 +22,7 @@ gitlab是开源社区最大的分布式版本控制系统git的CMS实现，基�
 - [git diff使用详解](/doc/#/gitlab/git_diff) 
 - [gitlab设置ssh实现免密交互](/doc/#/gitlab/gitlab-ssh)
 - [git branch及命令行中的分支管理](/doc/#/gitlab/git_branch_textmode) 
-- [时光机--git reset与git revert的使用](/doc/#/gitlab/git_reset_revert) *
+- [时光机--使用reset,rebase和commit来修改提交历史](/doc/#/gitlab/git_reset_revert) *
 
 
 ### 针对项目负责人的git迁移相关
