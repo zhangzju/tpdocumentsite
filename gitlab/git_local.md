@@ -146,6 +146,9 @@ git log -L '/int main/',/^}/:main.c
 # 显示最近的三次提交
 git log -3
 
+#一个神奇的命令，推荐使用
+git log --oneline --decorate --graph --all
+
 ```
 
 在针对commit进行操作的时候，需要获取每一次提交的<HASH>，一般都是通过git log获取，不过完整的<HASH>是一串很长的字符串，git提供了一个简短的字符串来标记每一次提交的<HASH>，可与通过以下命令获取：
