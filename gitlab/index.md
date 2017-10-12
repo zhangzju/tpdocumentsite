@@ -111,7 +111,37 @@ git config --global http.sslVerify false
 
 ```
 
+### 代码clone过程中出现GTK组件调用失败
 
+Ｑ：进行代码的clone操作的时候出现无法调用GTK组件的警告并且操作无法进行，错误的信息如下：
+
+```shell
+Gtk-WARNING **: cannot open display
+```
+
+这是由于在gitlab允许代码下载时，首先要经过用户名密码的校验，使用Gnome桌面的操作系统则会调用GTK套件中的用户名密码输入框体组件，但是此时如果处于textmode文字界面下，则会出现这个错误。
+
+解决的办法是关闭图形界面的调用，输入以下命令：
+
+```shell
+unset SSH_ASKPASS
+```
+
+然后在删除掉原来产生的文件夹并重新clone即可。
+
+### 代码clone时出现没有refs导致无法checkout的问题
+
+Q：代码在第一次clone的时候出现这个问题，具体信息如下：
+
+```shell
+warning: remote HEAD refers to nonexistent ref, unable to checkout.
+```
+从信息上理解是远程仓库缺少了HEAD指针，在我们的工作环境中，远程仓库一般不会出现这个问题，那么导致这个问题的原因带盖有两种：
+
+* git版本过低，采用了老旧的配置文件读取方式，无法获取refs指向的位置
+* 没有需要clone的仓库的权限，例如软件二组成员去尝试clone软件一组独有的仓库
+
+遇到这样的情况，先登录gitlab查看自己是否具有这部分相关权限，然后对版本进行升级，如果仍无法解决，需要联系一下管理员。
 
 
 
